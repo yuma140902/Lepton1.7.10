@@ -17,8 +17,13 @@ public class ModConfigCore {
 	public static Configuration cfg;
 	
 	public static class Props {
-		public static Property clayConversion;
-		public static Property dyeAnyWool;
+		public static Property clayConversion; //Bool
+		public static Property dyeAnyWool; //Bool
+		public static Property stackableItemsMinecarts; //Int
+		public static Property stackableItemsSaddles; //Int
+		public static Property stackableItemsHorseArmors; //Int
+		public static Property stackableItemsStew; //Int
+		public static Property stackableItemsBucket; //Int
 	}
 	
 	public static void loadConfig(FMLPreInitializationEvent event) {
@@ -46,6 +51,11 @@ public class ModConfigCore {
 		// Tweaks
 		Props.clayConversion = cfg.get(CATEGORY_TWEAKS, "Clay Conversion", true, "Add clay conversion recipe");
 		Props.dyeAnyWool = cfg.get(CATEGORY_TWEAKS, "Dye Any Wool", true, "Add dye recipe for any colored wool");
+		Props.stackableItemsMinecarts = cfg.get(CATEGORY_TWEAKS, "Stackable Items - Minecarts", 4, "Stack size of minecarts");
+		Props.stackableItemsSaddles = cfg.get(CATEGORY_TWEAKS, "Stackable Items - Saddles", 16, "Stack size of saddles");
+		Props.stackableItemsHorseArmors = cfg.get(CATEGORY_TWEAKS, "Stackable Items - Hourse Armors", 16, "Stack size of horse armors");
+		Props.stackableItemsStew = cfg.get(CATEGORY_TWEAKS, "Stackable Items - Stew", 64, "Stack size of stew and soup");
+		Props.stackableItemsBucket = cfg.get(CATEGORY_TWEAKS, "Stackable Items - Bucket", 16, "Stack size of buckets");
 		
 		IntegrationConfigs.syncConfig(cfg);
 		

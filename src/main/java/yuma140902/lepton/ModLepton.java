@@ -10,6 +10,7 @@ import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import net.minecraft.init.Blocks;
+import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;
 import yuma140902.lepton.config.ModConfigCore;
@@ -54,6 +55,31 @@ public class ModLepton {
 		for(int meta = 0; meta < 16; ++meta) {
 			OreDictionary.registerOre(LeptonProperties.OREDICT_WOOL, new ItemStack(Blocks.wool, 0, meta));
 		}
+		
+		final int stacksizeMinecarts = ModConfigCore.Props.stackableItemsMinecarts.getInt();
+		Items.minecart.setMaxStackSize(stacksizeMinecarts);
+		Items.chest_minecart.setMaxStackSize(stacksizeMinecarts);
+		Items.command_block_minecart.setMaxStackSize(stacksizeMinecarts);
+		Items.furnace_minecart.setMaxStackSize(stacksizeMinecarts);
+		Items.hopper_minecart.setMaxStackSize(stacksizeMinecarts);
+		Items.tnt_minecart.setMaxStackSize(stacksizeMinecarts);
+		
+		final int stacksizeSaddles = ModConfigCore.Props.stackableItemsSaddles.getInt();
+		Items.saddle.setMaxStackSize(stacksizeSaddles);
+		
+		final int stacksizeHorseArmors = ModConfigCore.Props.stackableItemsHorseArmors.getInt();
+		Items.iron_horse_armor.setMaxStackSize(stacksizeHorseArmors);
+		Items.golden_horse_armor.setMaxStackSize(stacksizeHorseArmors);
+		Items.diamond_horse_armor.setMaxStackSize(stacksizeHorseArmors);
+		
+		final int stacksizeStew = ModConfigCore.Props.stackableItemsStew.getInt();
+		Items.mushroom_stew.setMaxStackSize(stacksizeStew);
+		
+		final int stacksizeBucket = ModConfigCore.Props.stackableItemsBucket.getInt();
+		Items.bucket.setMaxStackSize(stacksizeBucket);
+		Items.lava_bucket.setMaxStackSize(stacksizeBucket);
+		Items.milk_bucket.setMaxStackSize(stacksizeBucket);
+		Items.water_bucket.setMaxStackSize(stacksizeBucket);
 	}
 	
 	@EventHandler
