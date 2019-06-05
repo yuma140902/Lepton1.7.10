@@ -77,9 +77,9 @@ public class ModLepton {
 		
 		final int stacksizeBucket = ModConfigCore.Props.stackableItemsBucket.getInt();
 		Items.bucket.setMaxStackSize(stacksizeBucket);
-		Items.lava_bucket.setMaxStackSize(stacksizeBucket);
-		Items.milk_bucket.setMaxStackSize(stacksizeBucket);
-		Items.water_bucket.setMaxStackSize(stacksizeBucket);
+//		Items.lava_bucket.setMaxStackSize(stacksizeBucket);
+//		Items.milk_bucket.setMaxStackSize(stacksizeBucket);
+//		Items.water_bucket.setMaxStackSize(stacksizeBucket);
 	}
 	
 	@EventHandler
