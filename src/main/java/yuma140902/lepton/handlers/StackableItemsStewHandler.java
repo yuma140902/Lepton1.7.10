@@ -17,7 +17,10 @@ public class StackableItemsStewHandler {
 			event.result = event.item;
 			
 			if(!event.entityPlayer.capabilities.isCreativeMode) {
-				event.entityPlayer.inventory.addItemStackToInventory(new ItemStack(Items.bowl, 1));
+				boolean succeeded = event.entityPlayer.inventory.addItemStackToInventory(new ItemStack(Items.bowl, 1));
+				if(!succeeded) {
+					event.entityPlayer.dropItem(Items.bowl, 1);
+				}
 			}
 		}
 	}
