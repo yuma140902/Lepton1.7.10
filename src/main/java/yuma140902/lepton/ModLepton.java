@@ -67,11 +67,6 @@ public class ModLepton {
 		final int stacksizeSaddles = ModConfigCore.Props.stackableItemsSaddles.getInt();
 		Items.saddle.setMaxStackSize(stacksizeSaddles);
 		
-		final int stacksizeHorseArmors = ModConfigCore.Props.stackableItemsHorseArmors.getInt();
-		Items.iron_horse_armor.setMaxStackSize(stacksizeHorseArmors);
-		Items.golden_horse_armor.setMaxStackSize(stacksizeHorseArmors);
-		Items.diamond_horse_armor.setMaxStackSize(stacksizeHorseArmors);
-		
 		final int stacksizeStew = ModConfigCore.Props.stackableItemsStew.getInt();
 		Items.mushroom_stew.setMaxStackSize(stacksizeStew);
 		
