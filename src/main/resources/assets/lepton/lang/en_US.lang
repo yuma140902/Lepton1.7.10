@@ -2,3 +2,5 @@
 itemGroup.lepton=Lepton
 
 tile.lepton.obsidian_pressure_plate.name=Obsidian Pressure Plate
+tile.lepton.gold_button.name=Gold Button
+tile.lepton.iron_button.name=Iron Button
