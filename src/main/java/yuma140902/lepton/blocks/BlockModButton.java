@@ -10,7 +10,7 @@ public abstract class BlockModButton extends BlockButton {
 	protected int tickRate;
 	
 	protected BlockModButton(int tickRate) {
-		super(false);
+		super(true);
 		this.tickRate = tickRate;
 		setCreativeTab(ModLepton.MOD_CREATIVETAB);
 	}
