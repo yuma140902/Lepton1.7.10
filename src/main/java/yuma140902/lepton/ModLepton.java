@@ -10,11 +10,12 @@ import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import net.minecraft.init.Blocks;
-import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;
 import yuma140902.lepton.config.ModConfigCore;
 import yuma140902.lepton.handlers.DispenserPlantingHandler;
+import yuma140902.lepton.handlers.DyeAnyWoolHandler;
+import yuma140902.lepton.handlers.StackableItemsHandler;
 import yuma140902.lepton.proxy.CommonProxy;
 import yuma140902.lepton.recipes.Recipes;
 import yuma140902.lepton.util.LeptonProperties;
@@ -52,31 +53,8 @@ public class ModLepton {
 	}
 	
 	private void tweakVanilla() {
-		
-		for(int meta = 0; meta < 16; ++meta) {
-			OreDictionary.registerOre(LeptonProperties.OREDICT_WOOL, new ItemStack(Blocks.wool, 0, meta));
-		}
-		
-		final int stacksizeMinecarts = ModConfigCore.Props.stackableItemsMinecarts.getInt();
-		Items.minecart.setMaxStackSize(stacksizeMinecarts);
-		Items.chest_minecart.setMaxStackSize(stacksizeMinecarts);
-		Items.command_block_minecart.setMaxStackSize(stacksizeMinecarts);
-		Items.furnace_minecart.setMaxStackSize(stacksizeMinecarts);
-		Items.hopper_minecart.setMaxStackSize(stacksizeMinecarts);
-		Items.tnt_minecart.setMaxStackSize(stacksizeMinecarts);
-		
-		final int stacksizeSaddles = ModConfigCore.Props.stackableItemsSaddles.getInt();
-		Items.saddle.setMaxStackSize(stacksizeSaddles);
-		
-		final int stacksizeStew = ModConfigCore.Props.stackableItemsStew.getInt();
-		Items.mushroom_stew.setMaxStackSize(stacksizeStew);
-		
-		final int stacksizeBucket = ModConfigCore.Props.stackableItemsBucket.getInt();
-		Items.bucket.setMaxStackSize(stacksizeBucket);
-//		Items.lava_bucket.setMaxStackSize(stacksizeBucket);
-//		Items.milk_bucket.setMaxStackSize(stacksizeBucket);
-//		Items.water_bucket.setMaxStackSize(stacksizeBucket);
-		
+		DyeAnyWoolHandler.init();
+		StackableItemsHandler.init();
 		DispenserPlantingHandler.init();
 	}
 	
