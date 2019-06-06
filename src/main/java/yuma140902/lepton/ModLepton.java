@@ -12,6 +12,7 @@ import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;
+import net.minecraft.creativetab.CreativeTabs;
 import yuma140902.lepton.config.ModConfigCore;
 import yuma140902.lepton.handlers.DispenserPlantingHandler;
 import yuma140902.lepton.handlers.DyeAnyWoolHandler;
@@ -38,6 +39,7 @@ public class ModLepton {
 	public static final String MOD_UNLOCALIZED_ENTRY_DOMAIN = "lepton";
 	public static final String MINECRAFT_VERSION = "1.7.10";
 	public static final String MOD_VERSION = "0.0.0";
+	public static final CreativeTabs MOD_CREATIVETAB = new ModCreativeTab();
 	public static final Logger LOGGER = LogManager.getLogger(MOD_NAME);
 	
 	
