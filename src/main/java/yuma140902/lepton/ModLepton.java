@@ -9,9 +9,6 @@ import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
-import net.minecraft.init.Blocks;
-import net.minecraft.item.ItemStack;
-import net.minecraftforge.oredict.OreDictionary;
 import net.minecraft.creativetab.CreativeTabs;
 import yuma140902.lepton.config.ModConfigCore;
 import yuma140902.lepton.handlers.DispenserPlantingHandler;
@@ -19,6 +16,7 @@ import yuma140902.lepton.handlers.DyeAnyWoolHandler;
 import yuma140902.lepton.handlers.StackableItemsHandler;
 import yuma140902.lepton.proxy.CommonProxy;
 import yuma140902.lepton.recipes.Recipes;
+import yuma140902.lepton.registry.MyBlocks;
 import yuma140902.lepton.util.LeptonProperties;
 
 @Mod(modid = ModLepton.MOD_ID, name = ModLepton.MOD_NAME, version = ModLepton.MOD_VERSION, useMetadata = true, guiFactory = LeptonProperties.MOD_CONFIG_GUI_FACTORY)
@@ -67,6 +65,7 @@ public class ModLepton {
 		LOGGER.info("preInit");
 		
 		tweakVanilla();
+		MyBlocks.register();
 	}
 	
 	@EventHandler
