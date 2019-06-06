@@ -14,6 +14,7 @@ import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;
 import yuma140902.lepton.config.ModConfigCore;
+import yuma140902.lepton.handlers.DispenserPlantingHandler;
 import yuma140902.lepton.proxy.CommonProxy;
 import yuma140902.lepton.recipes.Recipes;
 import yuma140902.lepton.util.LeptonProperties;
@@ -75,6 +76,8 @@ public class ModLepton {
 //		Items.lava_bucket.setMaxStackSize(stacksizeBucket);
 //		Items.milk_bucket.setMaxStackSize(stacksizeBucket);
 //		Items.water_bucket.setMaxStackSize(stacksizeBucket);
+		
+		DispenserPlantingHandler.init();
 	}
 	
 	@EventHandler

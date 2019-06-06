@@ -8,7 +8,8 @@ import yuma140902.lepton.integration.IntegrationConfigs;
 public class ModConfigCore {
 	public static final String
 		CATEGORY_GENERAL = "General",
-		CATEGORY_TWEAKS = getSubCategory("Tweaks");
+		CATEGORY_TWEAKS = getSubCategory("Tweaks"),
+		CATEGORY_AUTOMATION = getSubCategory("Automation");
 	
 	public static final String
 		CONFIG_PROP_LANGKEY = "config.lepton.prop.",
@@ -23,6 +24,8 @@ public class ModConfigCore {
 		public static Property stackableItemsSaddles; //Int
 		public static Property stackableItemsStew; //Int
 		public static Property stackableItemsBucket; //Int
+		
+		public static Property dispenserPlanting; //Bool
 	}
 	
 	public static void loadConfig(FMLPreInitializationEvent event) {
@@ -42,6 +45,9 @@ public class ModConfigCore {
 		cfg.addCustomCategoryComment(CATEGORY_TWEAKS, "Enable/Disable tweaking features");
 		cfg.setCategoryRequiresMcRestart(CATEGORY_TWEAKS, true);
 		
+		// Automation
+		cfg.setCategoryRequiresMcRestart(CATEGORY_AUTOMATION, true);
+		
 		IntegrationConfigs.initConfig(cfg);
 	}
 	
@@ -54,6 +60,9 @@ public class ModConfigCore {
 		Props.stackableItemsSaddles = cfg.get(CATEGORY_TWEAKS, "Stackable Items - Saddles", 16, "Stack size of saddles");
 		Props.stackableItemsStew = cfg.get(CATEGORY_TWEAKS, "Stackable Items - Stew", 64, "Stack size of stew and soup");
 		Props.stackableItemsBucket = cfg.get(CATEGORY_TWEAKS, "Stackable Items - Bucket", 16, "Stack size of buckets");
+		
+		// Automation
+		Props.dispenserPlanting = cfg.get(CATEGORY_AUTOMATION, "Dispenser Planting", true);
 		
 		IntegrationConfigs.syncConfig(cfg);
 		
